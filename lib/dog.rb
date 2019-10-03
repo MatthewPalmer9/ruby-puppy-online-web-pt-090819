@@ -5,14 +5,14 @@ class Dog
   
   def initialize(name)
     @name = name
-    @@all << self 
+    save
   end 
   
   def self.all 
     @@all 
   end 
   
-  def self.save
+  def save
     @@all << self 
   end 
   
@@ -21,6 +21,6 @@ class Dog
   end 
   
   def self.print_all
-    @@all.sort_by(){|dog| puts dog.name}
+    @@all.each(){|dog| puts dog.name}
   end 
 end 
